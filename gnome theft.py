@@ -20,11 +20,15 @@ for folder in os.listdir(sourcepath + "common/"):
         destination2 = destination + game + ".ico"
         destination3 = destination + game + ".png"
         path = sourcepath + "common/" + game + "/*.exe"
-        
+        altpath = sourcepath + "common/" + game + "/Game" + "/*.exe" #look this is just how fromsoft does it I guess
+
         if (glob.glob(path)): 
             path2 = glob.glob(path)[0]
         else:
-            continue
+            if (glob.glob(altpath)):
+                path2 = glob.glob(altpath)[0]
+            else:
+                continue
 
         try:
             extractor = IconExtractor(path2)
