@@ -69,6 +69,7 @@ for folder in os.listdir(sourcepath + "common/"):
                 "[Desktop Entry]" +
                 "\nName=" + game +
                 "\nExec=steam steam://rungameid/" + gameID +
+                "\nType=Application" +
                 "\nIcon=" + destination3 +
                 "\nCategories=Game;" +
                 "\nTerminal=false" +
